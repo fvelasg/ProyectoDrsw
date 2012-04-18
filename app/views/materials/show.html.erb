@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cantidadfisica:</b>
+  <%= @material.cantidadfisica %>
+</p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @material.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @material.descripcion %>
+</p>
+
+<p>
+  <b>Unidadmedida:</b>
+  <%= @material.unidadmedida %>
+</p>
+
+<p>
+  <b>Preciounidad:</b>
+  <%= @material.preciounidad %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @material.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_material_path(@category,@material) %> |
+<%= link_to 'Back', category_materials_path(@category) %>

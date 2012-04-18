@@ -1,0 +1,34 @@
+<h1>Listing materials</h1>
+
+<table>
+  <tr>
+    <th>Cantidadfisica</th>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Unidadmedida</th>
+    <th>Preciounidad</th>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @materials.each do |material| %>
+  <tr>
+    <td><%= material.cantidadfisica %></td>
+    <td><%= material.nombre %></td>
+    <td><%= material.descripcion %></td>
+    <td><%= material.unidadmedida %></td>
+    <td><%= material.preciounidad %></td>
+    <td><%= material.category %></td>
+    <td><%= link_to 'Show', [@category,material] %></td>
+    <td><%= link_to 'Edit', edit_category_material_path(@category,material) %></td>
+    <td><%= link_to 'Destroy', [@category,material], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Material', new_category_material_path %>
+<%= link_to 'Back', @category %>

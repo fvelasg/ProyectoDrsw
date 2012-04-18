@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  cantidadfisica: 1
+  nombre: MyString
+  descripcion: MyString
+  unidadmedida: MyString
+  preciounidad: 1
+  category: 
+
+two:
+  cantidadfisica: 1
+  nombre: MyString
+  descripcion: MyString
+  unidadmedida: MyString
+  preciounidad: 1
+  category: 

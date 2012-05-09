@@ -2,8 +2,10 @@
 
 one:
   estado: 1
+  cantidad: 1
   user: 
 
 two:
   estado: 1
+  cantidad: 1
   user: 

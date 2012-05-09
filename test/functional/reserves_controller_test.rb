@@ -18,7 +18,7 @@ class ReservesControllerTest < ActionController::TestCase
 
   test "should create reserf" do
     assert_difference('Reserve.count') do
-      post :create, :reserf => { :estado => @reserf.estado }
+      post :create, :reserf => { :cantidad => @reserf.cantidad, :estado => @reserf.estado }
     end
 
     assert_redirected_to reserf_path(assigns(:reserf))
@@ -35,7 +35,7 @@ class ReservesControllerTest < ActionController::TestCase
   end
 
   test "should update reserf" do
-    put :update, :id => @reserf, :reserf => { :estado => @reserf.estado }
+    put :update, :id => @reserf, :reserf => { :cantidad => @reserf.cantidad, :estado => @reserf.estado }
     assert_redirected_to reserf_path(assigns(:reserf))
   end
 

@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :estado %> <br />
-    <%= f.number_field :estado %>
+    <%= f.label :estado %> 1= activa 2=despachada<br />
+    <%= f.number_field :estado, :min =>1,:max=>1, :value=>1%>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad , :min =>1%>
   </div>
   <div class="field">
     <%= f.label :user %><br />
@@ -26,8 +30,11 @@
       
     <% end %>
   </div>
-  
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+

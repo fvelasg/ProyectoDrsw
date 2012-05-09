@@ -4,7 +4,8 @@ class MaterialsReserves < ActiveRecord::Migration
       t.references :material
       t.references :reserve
     end
-
+    
+    
   end
   def change
     create_table :materials_reserves, :id => false do |t|
@@ -16,5 +17,6 @@ class MaterialsReserves < ActiveRecord::Migration
   end 
 
   def down
+    drop_table :materials_reserves
   end
 end

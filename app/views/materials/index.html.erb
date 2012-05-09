@@ -20,7 +20,7 @@
     <td><%= material.descripcion %></td>
     <td><%= material.unidadmedida %></td>
     <td><%= material.preciounidad %></td>
-    <td><%= material.category %></td>
+    <td><%= material.category.nombre %></td>
     <td><%= link_to 'Show', [@category,material] %></td>
     <td><%= link_to 'Edit', edit_category_material_path(@category,material) %></td>
     <td><%= link_to 'Destroy', [@category,material], :confirm => 'Are you sure?', :method => :delete %></td>

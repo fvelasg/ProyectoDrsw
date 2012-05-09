@@ -1,8 +1,10 @@
+<p id="notice"><%= notice %></p>
 <h1>Listing reserves</h1>
 
 <table>
   <tr>
     <th>Estado</th>
+    <th>Cantidad</th>
     <th>User</th>
     <th></th>
     <th></th>
@@ -12,10 +14,11 @@
 <% @reserves.each do |reserf| %>
   <tr>
     <td><%= reserf.estado %></td>
+    <td><%= reserf.cantidad %></td>
     <td><%= reserf.user.nombre %></td>
     <td><%= link_to 'Show', reserf %></td>
-    <td><%= link_to 'Edit', edit_reserf_path(reserf) %></td>
-    <td><%= link_to 'Destroy', reserf, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Cancelar', reserf, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Despachar', edit_reserf_path(reserf) %></td>
   </tr>
 <% end %>
 </table>
@@ -25,3 +28,6 @@
 <%if(session[:userdata]!=nil)%>
 <%= link_to 'log out', session_path, :method=>:delete %>
 <%end%>
+
+
+

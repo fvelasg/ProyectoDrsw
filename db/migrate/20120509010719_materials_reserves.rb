@@ -7,15 +7,7 @@ class MaterialsReserves < ActiveRecord::Migration
     
     
   end
-  def change
-    create_table :materials_reserves, :id => false do |t|
-      t.references :material
-      t.references :reserve
-    end
-    add_index materials_reserves, :material_id
-    add_index materials_reserves, :reserve_id
-  end 
-
+  
   def down
     drop_table :materials_reserves
   end

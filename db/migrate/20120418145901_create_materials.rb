@@ -12,4 +12,7 @@ class CreateMaterials < ActiveRecord::Migration
     end
     add_index :materials, :category_id
   end
+  def down
+    drop_table :materials
+  end
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Estado:</b>
+  <%= @reserf.estado %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @reserf.user.nombre %>
+</p>
+<p>
+<b>Associated materials:</b>
+  <%= @reserf.materials.map{|p| p.nombre}.to_sentence %>
+</p>
+
+
+<%= link_to 'Edit', edit_reserf_path(@reserf) %> |
+<%= link_to 'Back', reserves_path %>

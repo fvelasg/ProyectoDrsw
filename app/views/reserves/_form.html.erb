@@ -1,0 +1,33 @@
+<%= form_for(@reserf) do |f| %>
+  <% if @reserf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reserf.errors.count, "error") %> prohibited this reserf from being saved:</h2>
+
+      <ul>
+      <% @reserf.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :estado %> <br />
+    <%= f.number_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= session[:userdata] %>
+  </div>
+  <div class="field">
+    <%= label_tag 'materials' %><br />
+    <% for material in Material.all do  %>
+      <%= check_box_tag "reserve[material_ids][#{material.id}]", nil, @reserf.materials.member?(material) %><%= material.nombre %>
+      
+    <% end %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,51 @@
+Story: administrator creates materials
+As an administrator 
+I want to create a material 
+so that the material can be reserved
+
+Scenario 1: the categoria doesn't exist
+Given the database is empty
+And i go to the materials creation page
+And i fill "nombre" with "pisoXX"
+And i fill "cantidad" with "5"
+And i fill "categoria" whit "cat1"
+When i press "add"
+Then error page should be shown  
+
+Scenario 2: the category already exists
+Given a category with name "cat1", previously created
+And i go to the materials creation page
+And i fill "nombre" with "pisoXX"
+And i fill "cantidad" with "5"
+And i fill "categoria" whit "cat1"
+Then confirmation page should be shown 
+
+ 
+Story: user does a reserve
+As an user 
+I want to reserve materials 
+so that i will be sure to purchase the materials
+
+Scenario 1: there are sufficient cantidad of material
+Given there are 5 units of "pisoXX"
+when the user request for a reserve 
+then add the material to the reserve
+and ensure that the CANTIDADDISPONIBLE was diminished
+
+Scenario 2: there aren't sufficient cantidaddisponible of material
+Given the materias doesn't have sufficient cantidaddisponible 
+when the user request for reserve
+then ensure the error message is displayed 
+and ensure the material wasn't modified
+
+
+Story: admin sends a reservation
+As an administrator
+I want to send a reservation 
+so that the reserve was atentd
+
+Scenario 1: there are sufficient CANTIDADFisica of material
+Given there are sufficient CANTIDADFISICA of material 
+when i click atent
+then the cantidadfisica was modified
+and ensure the reserve's status is 2

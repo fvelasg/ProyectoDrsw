@@ -1,8 +1,11 @@
 class ReservesController < ApplicationController
-  before_filter :validateAuth, :except => :index
+  before_filter :validateAuth, :except => [:index,:view]
 
   # GET /reserves
   # GET /reserves.json
+  def view
+    
+  end
   def index
     @reserves = Reserve.all
 

@@ -4,15 +4,13 @@ class SessionsController < ApplicationController
    end
    
    def create
-    @users=User.all
-    @users.each do |t|
-      if (params[:user]==t.nombre&& params[:password]==t.clave)
-        session[:userdata]=t.nombre
-        redirect_to reserves_path
-      else
-        redirect_to new_session_path, :notice => 'Autenticacion fallida'
-      end  
-    end
+    @usuario=User.where("nombre = ? and clave = ?",params[:user],params[:password]).first()
+     if(!@usuario.nil?)
+       session[:userdata]=@usuario.nombre
+       redirect_to reserves_path
+     else
+       redirect_to new_session_path, :notice => 'Autenticacion fallida'
+     end
   end
 
 

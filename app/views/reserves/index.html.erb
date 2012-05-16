@@ -19,15 +19,14 @@
     <td><%= link_to 'Show', reserf %></td>
     <td><%= link_to 'Cancelar', reserf, :confirm => 'Are you sure?', :method => :delete %></td>
     <td><%= link_to 'Despachar', edit_reserf_path(reserf) %></td>
+    <td><%= link_to 'Ver Lista Materiales', materiales_path() %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 <%= link_to 'New Reserve', new_reserf_path %>
-<%if(session[:userdata]!=nil)%>
-<%= link_to 'log out', session_path, :method=>:delete %>
-<%end%>
+
 
 
 

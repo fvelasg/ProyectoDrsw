@@ -7,7 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<%if(session[:userdata]!=nil)%>
+<h1>BIENVENIDO <%= session[:userdata]%></h1><%= link_to 'log out', session_path, :method=>:delete %>
+<%else%>
+<%= link_to 'sing in', new_session_path %>
+<%end%>
 <%= yield %>
 
 </body>

@@ -3,14 +3,19 @@ class MaterialsController < ApplicationController
   # GET /materials.json
   def index
     @category= Category.find(params[:category_id])
-    @materials = Material.find_all_by_category_id(@category.id)
-    @materials = Material.all
+    @materials = Material.where("category_id = ? ",@category.id)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @materials }
     end
   end
-
+  def todos
+    @materials = Material.all()
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @materials }
+    end
+  end
   # GET /materials/1
   # GET /materials/1.json
   def show

@@ -8,7 +8,7 @@ Pruebalinux::Application.routes.draw do
   resources :categories do 
     resources :materials
   end
-
+  match 'materiales' => 'materials#todos', :as => :materiales
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
